@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Islamic Tools - Calculators</title>
+    <meta name="description" content="Access all Islamic calculators including age calculator, zakat calculator, and qibla direction finder">
+    
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-app-pub-8894441711880316" crossorigin="anonymous"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #f59e0b;
+            --dark: #1e40af;
+            --light: #f8fafc;
+            --text: #1e293b;
+            --glass: rgba(255, 255, 255, 0.8);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: var(--dark);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        nav a:hover {
+            background-color: var(--primary);
+            transform: translateY(-2px);
+        }
+        
+        /* Ad Banner */
+        .ad-banner {
+            background-color: #ffffff;
+            padding: 15px;
+            text-align: center;
+            margin: 2rem auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            max-width: 1000px;
+        }
+        
+        /* Calculator Sections */
+        .calculator-section {
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin: 3rem 0;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .calculator-section h2 {
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .calculator-section h2 i {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .calculator-section p.description {
+            color: #64748b;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+        
+        .input-group {
+            margin-bottom: 1.8rem;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.8rem;
+            font-weight: 500;
+            color: var(--dark);
+            font-size: 1.1rem;
+        }
+        
+        input, select {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        input:focus, select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            font-size: 1rem;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .result {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background-color: #f8fafc;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            text-align: center;
+            display: none;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .result h3 {
+            color: var(--dark);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .back-btn {
+            display: inline-block;
+            margin-top: 2rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .back-btn:hover {
+            color: var(--dark);
+        }
+        
+        /* Qibla Compass */
+        .compass-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 2rem 0;
+        }
+        
+        .compass {
+            width: 220px;
+            height: 220px;
+            margin: 2rem auto;
+            position: relative;
+            border: 12px solid #f5f5f5;
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            background-color: white;
+        }
+        
+        .compass-inner {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: conic-gradient(
+                #f87171, #fb923c, #fbbf24, #a3e635, 
+                #4ade80, #2dd4bf, #38bdf8, #818cf8, 
+                #c084fc, #e879f9, #f87171
+            );
+            background-size: 100% 600%;
+            animation: rainbow 8s linear infinite;
+        }
+        
+        @keyframes rainbow {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+        
+        .compass-needle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 85%;
+            height: 5px;
+            background-color: #dc2626;
+            transform-origin: left center;
+            transform: translate(0, -50%) rotate(0deg);
+            z-index: 2;
+        }
+        
+        .compass-needle:after {
+            content: '';
+            position: absolute;
+            right: -12px;
+            top: -10px;
+            width: 0;
+            height: 0;
+            border-left: 12px solid #dc2626;
+            border-top: 12px solid transparent;
+            border-bottom: 12px solid transparent;
+        }
+        
+        .compass-center {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border-radius: 50%;
+            z-index: 3;
+            border: 3px solid #dc2626;
+        }
+        
+        .compass-direction {
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            font-weight: bold;
+            color: var(--dark);
+            bottom: -30px;
+        }
+        
+        .loading {
+            display: none;
+            margin: 2rem 0;
+            text-align: center;
+            font-size: 1.1rem;
+            color: #64748b;
+        }
+        
+        .loading i {
+            margin-right: 10px;
+            color: var(--primary);
+        }
+        
+        /* How to Use Section */
+        .how-to-use {
+            background-color: #f8fafc;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            border-left: 4px solid var(--secondary);
+        }
+        
+        .how-to-use h3 {
+            color: var(--dark);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .how-to-use ol {
+            padding-left: 1.5rem;
+        }
+        
+        .how-to-use li {
+            margin-bottom: 0.8rem;
+            color: #64748b;
+            line-height: 1.6;
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--dark);
+            color: white;
+            margin-top: 3rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .calculator-section {
+                padding: 1.5rem;
+            }
+            
+            header h1 {
+                font-size: 2.2rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+            
+            .compass {
+                width: 180px;
+                height: 180px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Islamic Calculators</h1>
+            <p>Access all our Islamic calculation tools in one place</p>
+        </div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#age-calculator">Age Calculator</a></li>
+            <li><a href="#zakat-calculator">Zakat Calculator</a></li>
+            <li><a href="#qibla-direction">Qibla Finder</a></li>
+        </ul>
+    </nav>
+    
+    <main class="container">
+        <!-- Middle Ad Banner - Unit ID 3 -->
+        <div class="ad-banner">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-app-pub-8894441711880316"
+                 data-ad-slot="7051102814"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+        
+        <!-- Age Calculator -->
+        <section id="age-calculator" class="calculator-section">
+            <h2><i class="fas fa-birthday-cake"></i> Age Calculator</h2>
+            <p class="description">Calculate your exact age according to both Hijri (Islamic) and Gregorian calendars. This tool helps you determine your age in years, months and days with precision.</p>
+            
+            <div class="input-group">
+                <label for="birthdate">Enter your date of birth:</label>
+                <input type="date" id="birthdate" required>
+            </div>
+            
+            <button class="btn" onclick="calculateAge()">Calculate Age</button>
+            
+            <div id="age-result" class="result">
+                <h3>Your Age Results</h3>
+                <div id="age-details"></div>
+            </div>
+            
+            <div class="how-to-use">
+                <h3>How to Use This Calculator</h3>
+                <ol>
+                    <li>Select your date of birth from the date picker</li>
+                    <li>Click the "Calculate Age" button</li>
+                    <li>View your age in both Gregorian and Hijri years</li>
+                    <li>For Islamic age, we add 1 year as Hijri calendar has fewer days</li>
+                </ol>
+            </div>
+            
+            <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Home</a>
+        </section>
+        
+        <!-- Zakat Calculator -->
+        <section id="zakat-calculator" class="calculator-section">
+            <h2><i class="fas fa-hand-holding-usd"></i> Zakat Calculator</h2>
+            <p class="description">Calculate your Zakat obligation accurately based on current gold and silver prices. Our calculator automatically checks if your wealth meets the nisab threshold.</p>
+            
+            <div class="input-group">
+                <label for="currency">Select Currency:</label>
+                <select id="currency">
+                    <option value="pkr">Pakistani Rupee (PKR)</option>
+                    <option value="usd">US Dollar (USD)</option>
+                    <option value="sar">Saudi Riyal (SAR)</option>
+                    <option value="aed">UAE Dirham (AED)</option>
+                </select>
+            </div>
+            
+            <div class="input-group">
+                <label for="wealth">Enter your total wealth (cash, gold, silver, investments):</label>
+                <input type="number" id="wealth" placeholder="Enter amount" required>
+                <p style="color: #64748b; font-size: 0.9rem; margin-top: 0.5rem;">
+                    Current Nisab: 87.48g gold (7.5 tola) or 612.36g silver (52.5 tola)
+                </p>
+            </div>
+            
+            <button class="btn" onclick="calculateZakat()">Calculate Zakat</button>
+            
+            <div id="zakat-result" class="result">
+                <h3>Your Zakat Calculation</h3>
+                <div id="zakat-details"></div>
+            </div>
+            
+            <div class="how-to-use">
+                <h3>How to Use This Calculator</h3>
+                <ol>
+                    <li>Select your preferred currency</li>
+                    <li>Enter your total wealth including cash, gold, silver and business assets</li>
+                    <li>Click "Calculate Zakat" to see if you owe Zakat</li>
+                    <li>The calculator automatically checks if your wealth meets the nisab threshold</li>
+                    <li>Zakat is calculated at 2.5% of qualifying wealth</li>
+                </ol>
+            </div>
+            
+            <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Home</a>
+        </section>
+        
+        <!-- Middle Ad Banner - Unit ID 4 -->
+        <div class="ad-banner">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-app-pub-8894441711880316"
+                 data-ad-slot="1677171411"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+        
+        <!-- Qibla Direction -->
+        <section id="qibla-direction" class="calculator-section">
+            <h2><i class="fas fa-compass"></i> Qibla Direction Finder</h2>
+            <p class="description">Find the exact direction to the Kaaba in Makkah from your current location. Our compass uses your device's GPS to determine the most accurate Qibla direction.</p>
+            
+            <button class="btn" onclick="findQibla()"><i class="fas fa-compass"></i> Find Qibla Direction</button>
+            
+            <div class="loading" id="loading">
+                <i class="fas fa-spinner fa-spin"></i> Detecting your location...
+            </div>
+            
+            <div class="compass-container">
+                <div class="compass">
+                    <div class="compass-inner">
+                        <div class="compass-needle" id="compass-needle"></div>
+                        <div class="compass-center"></div>
+                    </div>
+                    <div class="compass-direction" id="compass-direction">North</div>
+                </div>
+            </div>
+            
+            <div id="qibla-result" class="result">
+                <h3>Qibla Direction Details</h3>
+                <div id="qibla-details"></div>
+            </div>
+            
+            <div class="how-to-use">
+                <h3>How to Use This Tool</h3>
+                <ol>
+                    <li>Click the "Find Qibla Direction" button</li>
+                    <li>Allow location access when prompted by your browser</li>
+                    <li>The compass will automatically point to the Qibla direction</li>
+                    <li>For best accuracy, use this tool in an open area</li>
+                    <li>Hold your device flat for proper compass orientation</li>
+                </ol>
+            </div>
+            
+            <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Home</a>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="current-year"></span> Islamic Tools | All Rights Reserved</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Display current year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        // Age Calculator
+        function calculateAge() {
+            const birthdate = document.getElementById('birthdate').value;
+            if (!birthdate) {
+                alert('Please enter your date of birth');
+                return;
+            }
+            
+            const birthDate = new Date(birthdate);
+            const today = new Date();
+            
+            let age = today.getFullYear() - birthDate.getFullYear();
+            const monthDiff = today.getMonth() - birthDate.getMonth();
+            
+            if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+                age--;
+            }
+            
+            const resultDiv = document.getElementById('age-result');
+            const ageDetails = document.getElementById('age-details');
+            
+            resultDiv.style.display = 'block';
+            ageDetails.innerHTML = `
+                <p>Your Gregorian age: <strong>${age} years</strong></p>
+                <p>Your Islamic age: <strong>${age + 1} years</strong> (Hijri calendar calculation)</p>
+                <p>Note: Islamic age adds 1 year as Hijri year has fewer days than Gregorian year</p>
+            `;
+        }
+        
+        // Zakat Calculator
+        function calculateZakat() {
+            const currency = document.getElementById('currency').value;
+            const wealth = parseFloat(document.getElementById('wealth').value);
+            
+            if (!wealth || isNaN(wealth)) {
+                alert('Please enter a valid wealth amount');
+                return;
+            }
+            
+            // Nisab values (example values - update with current rates)
+            const nisabValues = {
+                'pkr': 200000,  // Example value for PKR
+                'usd': 700,     // Example value for USD
+                'sar': 2600,    // Example value for SAR
+                'aed': 2500     // Example value for AED
+            };
+            
+            const nisab = nisabValues[currency];
+            const resultDiv = document.getElementById('zakat-result');
+            const zakatDetails = document.getElementById('zakat-details');
+            
+            resultDiv.style.display = 'block';
+            
+            if (wealth >= nisab) {
+                const zakat = (wealth * 0.025).toFixed(2);
+                zakatDetails.innerHTML = `
+                    <p>Your wealth exceeds the nisab threshold</p>
+                    <p>Zakat payable: <strong>${zakat} ${currency.toUpperCase()}</strong></p>
+                    <p>Calculation: 2.5% of ${wealth} ${currency.toUpperCase()}</p>
+                    <p>Nisab threshold: ${nisab} ${currency.toUpperCase()}</p>
+                `;
+            } else {
+                zakatDetails.innerHTML = `
+                    <p>Your wealth is below the nisab threshold</p>
+                    <p>Current nisab: ${nisab} ${currency.toUpperCase()}</p>
+                    <p>Your wealth: ${wealth} ${currency.toUpperCase()}</p>
+                    <p>Zakat is not obligatory when wealth is below nisab</p>
+                `;
+            }
+        }
+        
+        // Qibla Direction
+        function findQibla() {
+            const loading = document.getElementById('loading');
+            const resultDiv = document.getElementById('qibla-result');
+            const qiblaDetails = document.getElementById('qibla-details');
+            const compassNeedle = document.getElementById('compass-needle');
+            const compassDirection = document.getElementById('compass-direction');
+            
+            loading.style.display = 'block';
+            resultDiv.style.display = 'none';
+            
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    position => {
+                        const lat = position.coords.latitude;
+                        const long = position.coords.longitude;
+                        
+                        // Calculate Qibla direction
+                        const qiblaAngle = calculateQiblaAngle(lat, long);
+                        
+                        // Rotate compass needle
+                        compassNeedle.style.transform = `translate(0, -50%) rotate(${qiblaAngle}deg)`;
+                        
+                        // Determine compass direction
+                        const direction = getDirectionFromAngle(qiblaAngle);
+                        compassDirection.textContent = direction;
+                        
+                        // Show results
+                        qiblaDetails.innerHTML = `
+                            <p>Your current location:</p>
+                            <p>Latitude: ${lat.toFixed(4)}°</p>
+                            <p>Longitude: ${long.toFixed(4)}°</p>
+                            <p>Qibla direction: ${qiblaAngle.toFixed(1)}° from North</p>
+                            <p>Facing: ${direction}</p>
+                        `;
+                        
+                        resultDiv.style.display = 'block';
+                        loading.style.display = 'none';
+                    },
+                    error => {
+                        loading.style.display = 'none';
+                        alert('Error getting your location. Please enable location services and try again.');
+                        console.error(error);
+                    }
+                );
+            } else {
+                loading.style.display = 'none';
+                alert('Your browser does not support geolocation');
+            }
+        }
+        
+        function calculateQiblaAngle(lat, long) {
+            // Mecca coordinates
+            const meccaLat = 21.3891;
+            const meccaLong = 39.8579;
+            
+            // Convert to radians
+            const phiK = meccaLat * Math.PI / 180.0;
+            const lambdaK = meccaLong * Math.PI / 180.0;
+            const phi = lat * Math.PI / 180.0;
+            const lambda = long * Math.PI / 180.0;
+            
+            // Calculate Qibla angle
+            const term1 = Math.sin(lambdaK - lambda);
+            const term2 = Math.cos(phi) * Math.tan(phiK);
+            const term3 = Math.sin(phi) * Math.cos(lambdaK - lambda);
+            
+            let qiblaAngle = Math.atan2(term1, term2 - term3) * 180.0 / Math.PI;
+            
+            // Normalize angle to 0-360 degrees
+            if (qiblaAngle < 0) {
+                qiblaAngle += 360;
+            }
+            
+            return qiblaAngle;
+        }
+        
+        function getDirectionFromAngle(angle) {
+            const directions = ['North', 'North-East', 'East', 'South-East', 'South', 'South-West', 'West', 'North-West'];
+            const index = Math.round(angle / 45) % 8;
+            return directions[index];
+        }
+        
+        // Load ads
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</body>
+  </html>
