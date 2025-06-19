@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Islamic Tools - Age, Zakat & Qibla Calculators</title>
+    <meta name="description" content="Free Islamic tools including age calculator, zakat calculator, and qibla direction finder">
+    
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-app-pub-8894441711880316" crossorigin="anonymous"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #f59e0b;
+            --dark: #1e40af;
+            --light: #f8fafc;
+            --text: #1e293b;
+            --glass: rgba(255, 255, 255, 0.8);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: var(--dark);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        nav a:hover {
+            background-color: var(--primary);
+            transform: translateY(-2px);
+        }
+        
+        /* Ad Banner */
+        .ad-banner {
+            background-color: #ffffff;
+            padding: 15px;
+            text-align: center;
+            margin: 2rem auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            max-width: 1000px;
+        }
+        
+        /* Tool Cards */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 3rem 0;
+        }
+        
+        .tool-card {
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .tool-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+        }
+        
+        .tool-card i {
+            font-size: 3.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .tool-card h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+            font-weight: 600;
+        }
+        
+        .tool-card p {
+            color: #64748b;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--dark);
+            color: white;
+            margin-top: 3rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .tools-grid {
+                grid-template-columns: 1fr;
+                padding: 2rem 0;
+            }
+            
+            header h1 {
+                font-size: 2.2rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Islamic Tools</h1>
+            <p>Comprehensive collection of Islamic calculators and utilities for your daily needs</p>
+        </div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="features.html">All Tools</a></li>
+            <li><a href="features.html#age-calculator">Age Calculator</a></li>
+            <li><a href="features.html#zakat-calculator">Zakat Calculator</a></li>
+            <li><a href="features.html#qibla-direction">Qibla Finder</a></li>
+        </ul>
+    </nav>
+    
+    <main class="container">
+        <!-- Top Ad Banner - Unit ID 1 -->
+        <div class="ad-banner">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-app-pub-8894441711880316"
+                 data-ad-slot="8856823282"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+        
+        <div class="tools-grid">
+            <div class="tool-card" onclick="location.href='features.html#age-calculator'">
+                <i class="fas fa-birthday-cake"></i>
+                <h2>Age Calculator</h2>
+                <p>Calculate your exact age according to Hijri and Gregorian calendars</p>
+                <a href="features.html#age-calculator" class="btn">Calculate Now</a>
+            </div>
+            
+            <div class="tool-card" onclick="location.href='features.html#zakat-calculator'">
+                <i class="fas fa-hand-holding-usd"></i>
+                <h2>Zakat Calculator</h2>
+                <p>Accurately calculate your Zakat obligation based on current nisab values</p>
+                <a href="features.html#zakat-calculator" class="btn">Calculate Zakat</a>
+            </div>
+            
+            <div class="tool-card" onclick="location.href='features.html#qibla-direction'">
+                <i class="fas fa-compass"></i>
+                <h2>Qibla Direction</h2>
+                <p>Find the exact Qibla direction from your current location</p>
+                <a href="features.html#qibla-direction" class="btn">Find Qibla</a>
+            </div>
+        </div>
+        
+        <!-- Bottom Ad Banner - Unit ID 2 -->
+        <div class="ad-banner">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-app-pub-8894441711880316"
+                 data-ad-slot="4082174600"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="current-year"></span> Islamic Tools | All Rights Reserved</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Display current year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        // Load ads
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</body>
+  </html>
